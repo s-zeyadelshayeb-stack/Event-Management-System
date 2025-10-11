@@ -11,10 +11,10 @@ The system aims to simplify event planning and improve student engagement using 
 ## 👥 Team Members
 | Name | University ID | Role |
 |------|----------------|------|
-| Zeyad Mahmoud Elshayeb | 202401723 | Team Leader / Backend Developer |
-| Retaj Reda Elbaz | 202400545 | Frontend Developer |
-| Sara Sameh | 202301807 | Database Designer / Tester |
-| Ameer Adel | 202401698 | Documentation & UI Wireframes |
+| Zeyad Mahmoud Elshayeb | 202401723 | Team Leader /Frontend Developer |
+| Retaj Reda Elbaz | 202400545 | Documentation & UI Wireframes |
+| Sara Sameh | 202301807 | Backend Developer  |
+| Ameer Adel | 202401698 |Database Designer / Tester  |
 
 **Team Representative:**  
 📧 s-zeyad.elshayeb@zewailcity.edu.eg 
