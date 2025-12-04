@@ -1,6 +1,13 @@
+import sqlite3
+import os
+from datetime import datetime
+
+DB_PATH = os.path.join(os.path.dirname(__file__), 'app.db')
+
+schema = """
 PRAGMA foreign_keys = ON;
 
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
   email TEXT NOT NULL UNIQUE,
@@ -9,12 +16,12 @@ CREATE TABLE users (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE events (
+CREATE TABLE IF NOT EXISTS events (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT NOT NULL,
   description TEXT,
   location TEXT,
-  date DATE,
+  date TEXT,
   time TEXT,
   status TEXT DEFAULT 'pending',
   organizer_id INTEGER,
@@ -22,7 +29,7 @@ CREATE TABLE events (
   FOREIGN KEY (organizer_id) REFERENCES users(id) ON DELETE SET NULL
 );
 
-CREATE TABLE registrations (
+CREATE TABLE IF NOT EXISTS registrations (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   student_id INTEGER NOT NULL,
   event_id INTEGER NOT NULL,
@@ -33,22 +40,25 @@ CREATE TABLE registrations (
   FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
 );
 
-CREATE TABLE feedbacks (
+CREATE TABLE IF NOT EXISTS feedbacks (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   student_id INTEGER NOT NULL,
   event_id INTEGER NOT NULL,
-  rating INTEGER CHECK(rating>=1 AND rating<=5),
+  rating INTEGER,
   comment TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (student_id) REFERENCES users(id),
   FOREIGN KEY (event_id) REFERENCES events(id)
 );
+"""
 
-CREATE TABLE notifications (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  user_id INTEGER,
-  message TEXT,
-  is_read INTEGER DEFAULT 0,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES users(id)
-);
+def init_db():
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.executescript(schema)
+    conn.commit()
+    conn.close()
+    print("Database created/updated at:", DB_PATH)
+
+if __name__ == "__main__":
+    init_db()
