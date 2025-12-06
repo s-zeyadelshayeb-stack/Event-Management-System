@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Feedbacks{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Event Feedbacks</h1>
+
+  <form method="post">
+    <label>Rating (1-5)</label>
+    <input type="number" name="rating" min="1" max="5" required>
+
+    <label>Comment</label>
+    <textarea name="comment" rows="4"></textarea>
+
+    <button class="btn primary" type="submit">Submit Feedback</button>
+  </form>
+
+  <hr>
+  <h2>Recent Feedbacks</h2>
+  {% if feedbacks and feedbacks|length > 0 %}
+    <ul class="feedback-list">
+      {% for f in feedbacks %}
+        <li>
+          <strong>{{ f.name or f.student_id }}</strong> — Rating: {{ f.rating }}<br>
+          <small>{{ f.created_at }}</small>
+          <p>{{ f.comment }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No feedbacks yet.</p>
+  {% endif %}
+</div>
+{% endblock %}
