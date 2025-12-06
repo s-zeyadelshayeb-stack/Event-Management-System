@@ -1,12 +1,12 @@
 from src.utils.db import get_db
 
-def create_user(name, email, password_hash):
+def create_user(name, email, password_hash, role='student'):
     db = get_db()
     cur = db.cursor()
     try:
         cur.execute(
             "INSERT INTO users (name, email, password_hash, role) VALUES (?, ?, ?, ?)",
-            (name, email, password_hash, 'student')
+            (name, email, password_hash, role)
         )
         db.commit()
         return cur.lastrowid
