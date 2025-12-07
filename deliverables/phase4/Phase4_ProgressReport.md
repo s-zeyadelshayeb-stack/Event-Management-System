@@ -15,11 +15,11 @@ This deliverable contains the team's Phase 4 prototype: core features implemente
 - **Feedback (SRS §5.x):** Submit and view feedback per event — *Completed* (Ameer).
 
 ## 3. Completed features (detailed)
-### Auth (branch: `feature/retaj-auth`) — Retaj
+### Auth (branch: `feature/retaj-auth`) — Zeyad
 - Files: `src/controllers/auth_controller.py`, `src/repositories/user_repo.py`, `templates/login.html`, `templates/signup.html`
 - How to test: run `init_db.py`, open `/signup` → create user → `/login` → redirect to dashboard.
 
-### Events (branch: `feature/zeyad-events`) — Zeyad
+### Events (branch: `feature/zeyad-events`) — Retaj
 - Files: `src/controllers/event_controller.py`, `src/repositories/event_repo.py`, `templates/dashboard.html`, `templates/event_detail.html`
 - How to test: login → `/dashboard` → create/view event.
 
