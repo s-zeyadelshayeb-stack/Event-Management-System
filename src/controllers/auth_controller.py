@@ -25,7 +25,11 @@ def signup():
             return render_template('signup.html')
 
         pw_hash = hash_password(password)
-        user_id = create_user(name, email, pw_hash)
+        # allow optional role selection from the signup form (default: student)
+        role = request.form.get('role', 'student')
+        if role not in ('student', 'organizer'):
+            role = 'student'
+        user_id = create_user(name, email, pw_hash, role=role)
         if user_id:
             flash('Account created. Please login.', 'success')
             return redirect(url_for('auth.login'))

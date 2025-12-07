@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect, url_for, flash, session
 from src.repositories.registration_repo import register_user, is_user_registered, cancel_registration, get_registration
 
-bp = Blueprint('registration', _name_)
+bp = Blueprint('registration', __name__)
 
 
 def _is_student():
