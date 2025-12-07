@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for
-from src.utils.db import close_db
+from src.utils.db import close_db 
 
 def create_app():
     app = Flask(__name__)

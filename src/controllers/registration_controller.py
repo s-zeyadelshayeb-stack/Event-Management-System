@@ -14,7 +14,6 @@ def register(event_id):
         flash('Please login to register', 'error')
         return redirect(url_for('auth.login'))
 
-    # only students may register for events
     if not _is_student():
         flash('Only students can register for events', 'error')
         return redirect(url_for('events.event_detail', event_id=event_id))
@@ -34,7 +33,6 @@ def register(event_id):
 
 @bp.route('/unregister/<int:registration_id>', methods=['POST'])
 def unregister(registration_id):
-    # Only students who own the registration may cancel it
     if 'user_id' not in session:
         flash('Please login', 'error')
         return redirect(url_for('auth.login'))
