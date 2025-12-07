@@ -1,7 +1,6 @@
 # Phase 4 — Core Functionality Prototype — Progress Report
 **Course:** CSAI 203 — Fall 2025  
-**Team:** Zeyad, Retaj, Sara, Ameer  
-**Date:** 2025-12-07
+**Team:** Zeyad Mahmoud, Retaj Reda, Sara Sameh, Ameer Adel
 
 ---
 
@@ -9,17 +8,17 @@
 This deliverable contains the team's Phase 4 prototype: core features implemented (~50%). The project is a simple Event Management System (EMS). The prototype includes user authentication, events listing and details, registration, and feedback submission.
 
 ## 2. Mapping to SRS (summary)
-- **User Authentication (SRS §2.x):** Signup, login, logout — *Completed* (Retaj).
-- **Event CRUD (SRS §3.x):** Create, Read implemented; Update partial; Delete pending — *Partial* (Zeyad).
+- **User Authentication (SRS §2.x):** Signup, login, logout — *Completed* (Zeyad).
+- **Event CRUD (SRS §3.x):** Create, Read implemented; Update partial; Delete pending — *Partial* (  Retaj).
 - **Registration (SRS §4.x):** Register/unregister to events — *Completed* (Sara).
 - **Feedback (SRS §5.x):** Submit and view feedback per event — *Completed* (Ameer).
 
 ## 3. Completed features (detailed)
-### Auth (branch: `feature/retaj-auth`) — Zeyad
+### Auth (branch: `feature/zeyad-auth`) — Zeyad
 - Files: `src/controllers/auth_controller.py`, `src/repositories/user_repo.py`, `templates/login.html`, `templates/signup.html`
 - How to test: run `init_db.py`, open `/signup` → create user → `/login` → redirect to dashboard.
 
-### Events (branch: `feature/zeyad-events`) — Retaj
+### Events (branch: `feature/retaj-events`) — Retaj
 - Files: `src/controllers/event_controller.py`, `src/repositories/event_repo.py`, `templates/dashboard.html`, `templates/event_detail.html`
 - How to test: login → `/dashboard` → create/view event.
 
