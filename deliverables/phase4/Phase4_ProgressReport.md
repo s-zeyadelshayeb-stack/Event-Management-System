@@ -15,19 +15,19 @@ This deliverable contains the team's Phase 4 prototype: core features implemente
 
 ## 3. Completed features (detailed)
 ### Auth (branch: `feature/zeyad-auth`) — Zeyad
-- Files: `src/controllers/auth_controller.py`, `src/repositories/user_repo.py`, `templates/login.html`, `templates/signup.html`
+- Files: `src/controllers/auth_controller.py`, , `src/repositories/user_repo.py`, `templates/login.html`, `templates/signup.html`, `templates/base.html`, `app.py`, `src/controllers/main.py`, `utils/auth.py`, `utils/db.py`, `utils/security.py`, `static/css/style.css`, `init_db.py`, `requirements.txt `
 - How to test: run `init_db.py`, open `/signup` → create user → `/login` → redirect to dashboard.
 
 ### Events (branch: `feature/retaj-events`) — Retaj
-- Files: `src/controllers/event_controller.py`, `src/repositories/event_repo.py`, `templates/dashboard.html`, `templates/event_detail.html`
+- Files: `src/controllers/event_controller.py`, `src/repositories/event_repo.py`, `templates/dashboard.html`, `templates/organizer_events.html`, `templates/create_event.html`, `templates/edit_event.html`, `templates/events_list.html`
 - How to test: login → `/dashboard` → create/view event.
 
 ### Registration (branch: `feature/sara-registration`) — Sara
-- Files: `src/controllers/registration_controller.py`, `src/repositories/registration_repo.py`
+- Files: `src/controllers/registration_controller.py`, `src/repositories/registration_repo.py`, `templates/event_detail.html`
 - How to test: open event detail → click Register → check registrations table.
 
 ### Feedback (branch: `feature/ameer-feedback`) — Ameer
-- Files: `src/controllers/feedback_controller.py`, `src/repositories/feedback_repo.py`, `templates/event_detail.html`
+- Files: `src/controllers/feedback_controller.py`, `src/repositories/feedback_repo.py`, `templates/feedback.html`
 - How to test: open event detail → submit feedback → feedback appears below.
 
 _Note:_ Replace branch names and file lists with exact ones if different.
