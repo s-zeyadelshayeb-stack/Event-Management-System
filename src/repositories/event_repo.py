@@ -80,5 +80,3 @@ def delete_event(event_id):
     except Exception:
         db.rollback()
         return False
-    
-    
