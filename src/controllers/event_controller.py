@@ -119,4 +119,3 @@ def organizer_events():
 
     events = get_events_by_organizer(organizer_id)
     return render_template('organizer_events.html', events=events)
-
