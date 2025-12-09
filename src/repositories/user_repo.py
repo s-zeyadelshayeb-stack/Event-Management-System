@@ -69,3 +69,4 @@ def update_user_password(user_id, new_password_hash):
     except Exception as e:
         db.rollback()
         return False
+

@@ -5,3 +5,4 @@ def hash_password(password):
 
 def verify_password(hash_, password):
     return check_password_hash(hash_, password)
+

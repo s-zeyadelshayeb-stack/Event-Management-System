@@ -41,3 +41,4 @@ def get_feedback(feedback_id):
     cur.execute("SELECT id, student_id, event_id, rating, comment, created_at FROM feedbacks WHERE id = ?", (feedback_id,))
     row = cur.fetchone()
     return dict(row) if row else None
+

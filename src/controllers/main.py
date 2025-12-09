@@ -29,3 +29,4 @@ def dashboard():
 		'dashboard.html', user=user, events=events, my_events=my_events, registrations=my_registrations
 	)
 
+

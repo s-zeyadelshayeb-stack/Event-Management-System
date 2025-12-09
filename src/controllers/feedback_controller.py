@@ -48,3 +48,4 @@ def feedback(event_id):
 
     feedbacks = get_event_feedbacks(event_id)
     return render_template('feedback.html', feedbacks=feedbacks, event=event)
+
