@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container">
+	<h1>Welcome, {{ user.name if user else 'Guest' }}</h1>
+
+	<section>
+		<h2>Upcoming Events</h2>
+		{% if events and events|length > 0 %}
+			<ul class="event-list">
+				{% for e in events %}
+					<li>
+						<h3><a href="{{ url_for('events.event_detail', event_id=e.id) }}">{{ e.title }}</a></h3>
+						<p>{{ e.description[:150] }}{% if e.description|length > 150 %}...{% endif %}</p>
+						<p><strong>Date:</strong> {{ e.date }} &nbsp; <strong>Time:</strong> {{ e.time }}</p>
+					</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<p>No upcoming events.</p>
+		{% endif %}
+	</section>
+
+	{% if my_events and my_events|length > 0 %}
+		<section>
+			<h2>My Events (Organizer)</h2>
+			<ul>
+				{% for me in my_events %}
+					<li>
+						<strong>{{ me.title }}</strong> — {{ me.date }}
+						<a href="{{ url_for('events.event_detail', event_id=me.id) }}">View</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</section>
+	{% endif %}
+
+	{% if session.get('role') == 'student' and registrations and registrations|length > 0 %}
+		<section>
+			<h2>My Registrations</h2>
+			<ul>
+				{% for r in registrations %}
+					<li>
+						<a href="{{ url_for('events.event_detail', event_id=r.event_id) }}">{{ r.title or 'Event' }}</a>
+						— registered on {{ r.registration_date }} ({{ r.status }})
+					</li>
+				{% endfor %}
+			</ul>
+		</section>
+	{% endif %}
+
+	<p>
+		<a href="{{ url_for('events.events_list') }}">See all events</a>
+		{% if session.get('role') == 'organizer' %} | <a href="{{ url_for('events.create_event_view') }}">Create event</a>{% endif %}
+	</p>
+</div>
+{% endblock %}
+
