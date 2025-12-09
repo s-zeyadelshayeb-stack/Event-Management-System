@@ -67,3 +67,4 @@ def mark_attended(registration_id):
     except Exception:
         db.rollback()
         return False
+    
