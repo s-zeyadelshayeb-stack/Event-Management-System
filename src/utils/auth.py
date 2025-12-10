@@ -25,3 +25,4 @@ def role_required(role):
         return wrapper
 
     return deco
+

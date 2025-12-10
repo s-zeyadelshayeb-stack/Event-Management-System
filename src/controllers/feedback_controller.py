@@ -12,7 +12,6 @@ def feedback(event_id):
         flash('Please login to leave feedback', 'error')
         return redirect(url_for('auth.login'))
 
-    # Allow the event organizer to view feedback without registering
     event = get_event_by_id(event_id)
     if not event:
         flash('Event not found', 'error')
@@ -24,7 +23,6 @@ def feedback(event_id):
         return redirect(url_for('events.event_detail', event_id=event_id))
 
     if request.method == 'POST':
-        # Only students may submit feedback
         if session.get('role') != 'student':
             flash('Only students can submit feedback', 'error')
             return redirect(url_for('events.event_detail', event_id=event_id))
@@ -48,3 +46,4 @@ def feedback(event_id):
 
     feedbacks = get_event_feedbacks(event_id)
     return render_template('feedback.html', feedbacks=feedbacks, event=event)
+
