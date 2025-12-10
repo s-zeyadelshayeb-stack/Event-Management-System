@@ -25,7 +25,6 @@ def signup():
             return render_template('signup.html')
 
         pw_hash = hash_password(password)
-        # allow optional role selection from the signup form (default: student)
         role = request.form.get('role', 'student')
         if role not in ('student', 'organizer'):
             role = 'student'
