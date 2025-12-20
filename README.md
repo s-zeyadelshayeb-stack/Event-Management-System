@@ -133,7 +133,7 @@ Dashboard
 ![Dashboard](deliverables/phase5/dashboard.png)
 
 Event Details  
-![Event Details](deliverables/phase5/event_details.png)
+![Event Details](deliverables/phase5/event_detail.png)
 
 Feedback Page  
 ![Feedback](deliverables/phase5/feedback.png)
@@ -170,4 +170,5 @@ Phase 5 – Final Submission
 ## Notes
 
 This project was developed for educational purposes.
+
 
