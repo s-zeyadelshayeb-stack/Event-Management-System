@@ -145,7 +145,7 @@ Docker Running
 
 ## Documentation
 
-All project documentation is available in the docs folder.
+All project documentation is available in the deliverables folders.
 
 ---
 
@@ -170,5 +170,6 @@ Phase 5 – Final Submission
 ## Notes
 
 This project was developed for educational purposes.
+
 
 
