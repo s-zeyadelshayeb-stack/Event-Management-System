@@ -98,30 +98,48 @@ python -m unittest discover test
 
 ---
 
-## Team Members
+## Team Contributions
 
-- Ziad – Backend Development and Docker
-- Sara – Testing and Event Management
-- Retag – Documentation, Demo and Presentation
+- Zeyad:
+zeyad was mainly responsible for the core backend and system foundation throughout the project.
+He implemented the authentication functionality, including login and signup, along with the required controllers and repositories.
+He also worked on the base layout and user interface styling, including the base template and CSS files.
+In addition, eyad handled feedback functionality, database connection logic, security utilities, and application configuration files.
+He implemented the main application setup, database initialization, and utility modules.
+eyad was also responsible for writing multiple unit tests, preparing the Dockerfile, initializing the database, managing dependencies, and creating the final README file.
+
+- Sara:
+Sara worked mainly on event registration functionality and testing.
+She implemented the event registration logic, including its controller and repository.
+Sara also worked on the event details page and ensured correct interaction between the frontend and backend.
+In Phase 5, she focused on writing unit tests related to registration and other system components.
+Additionally, she prepared the testing report documenting the testing process and results.
+
+- Retaj:
+Retaj was responsible for event management features and documentation.
+She implemented event-related functionalities, including event creation, editing, listing, and organizer-specific views.
+Retaj also worked on the main dashboard and multiple event-related pages.
+In addition to development tasks, she handled all documentation work, including User Documentation, Technical Documentation, and the Phase 5 Report.
+She also prepared the final presentation slides and organized the demo flow for the project.
 
 ---
 
 ## Screenshots
 
 Login Page  
-![Login](docs/screenshots/login.png)
+![Login](deliverables/phase5/login.png)
 
 Dashboard  
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](deliverables/phase5/dashboard.png)
 
 Event Details  
-![Event Details](docs/screenshots/event_details.png)
+![Event Details](deliverables/phase5/event_details.png)
 
 Feedback Page  
-![Feedback](docs/screenshots/feedback.png)
+![Feedback](deliverables/phase5/feedback.png)
 
 Docker Running  
-![Docker](docs/screenshots/docker_run.png)
+![Docker](deliverables/phase5/docker_run.png)
 
 ---
 
@@ -152,3 +170,4 @@ Phase 5 – Final Submission
 ## Notes
 
 This project was developed for educational purposes.
+
