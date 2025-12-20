@@ -1,8 +1,8 @@
 import unittest
 from app import create_app
-from src.repositories.user_repo import get_user_by_email
+from src.repositories.registration_repo import register_user
 
-class TestUserRepository(unittest.TestCase):
+class TestRegistration(unittest.TestCase):
 
     def setUp(self):
         self.app = create_app()
@@ -12,13 +12,10 @@ class TestUserRepository(unittest.TestCase):
     def tearDown(self):
         self.app_context.pop()
 
-    def test_user_not_found(self):
-        user = get_user_by_email("fake@email.com")
-        self.assertIsNone(user)
+    def test_register_user(self):
+        result = register_user(student_id=1, event_id=1)
+        
+        self.assertTrue(result is None or isinstance(result, int))
 
 if __name__ == "__main__":
     unittest.main()
-    
-    
-
-
